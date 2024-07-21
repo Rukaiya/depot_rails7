@@ -1,0 +1,21 @@
+<div class="w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice">
+      <%= notice %>
+    </p>
+  <% end %>
+
+  <h1 class="font-bold text-xl mb-5 py-2 border">Your Pragmatic Catalog</h1>
+  <ul>
+    <% @products.each do |product| %>
+        <li class="flex mb-5">
+          <%= image_tag(product.image_url, class: 'w-40 ') %>
+          <div class="ml-2">
+            <h2 class="font-bold text-lg mb-3"><%= product.title %></h2>
+            <p><%= sanitize(product.description) %></p>
+            <div class="mt-3"><%= number_to_currency(product.price) %></div>
+          </div>
+        </li>
+    <% end %>
+  </ul>
+</div>
