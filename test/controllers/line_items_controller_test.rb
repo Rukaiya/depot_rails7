@@ -24,7 +24,7 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
 
     assert_select 'main.container' do
       assert_select 'h2', 'Your Pragmatic Cart'
-      assert_select 'li', '1 × Programming Ruby 1.9' # Assuming this is how line item is displayed
+      assert_select 'td', 'Programming Ruby 1.9' # Assuming this is how line item is displayed
     end
   end
 
